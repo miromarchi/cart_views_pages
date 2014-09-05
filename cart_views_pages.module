@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Views and pages feature.
+ */
+
+include_once 'cart_views_pages.features.inc';
