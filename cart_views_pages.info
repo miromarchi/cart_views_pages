@@ -23,4 +23,5 @@ features[views_view][] = cart_view_completeness
 features[views_view][] = cart_view_curriculum
 features[views_view][] = cart_view_links
 features[views_view][] = cart_view_lists
+features[views_view][] = cart_view_taxonomy
 project path = sites/all/modules/features

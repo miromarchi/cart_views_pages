@@ -467,7 +467,7 @@ We want to know what you think, because your opinion matters to us. Do you ha
       'body' => '	<div class="norow norow-1 clearfix">
         <div class="col-md-6 col-md-offset-3 column text-center">
 	        <div class="front-focus">
-                <img src="sites/default/files/logoexp1.png" class="front-logo" /><img src="sites/default/files/logoexpr1.png" class="front-logo-r" />
+                <img src="<?php print base_path() . \'sites/default/files/structure/logoexp1.png\';?>" class="front-logo" /><img src="<?php print base_path() . \'sites/default/files/structure/logoexpr1.png\';?>" class="front-logo-r" />
                 <h1>
 	                CUBAN ART <br />WORLDWIDE
                 </h1>
@@ -480,7 +480,7 @@ We want to know what you think, because your opinion matters to us. Do you ha
     <div class="norow norow-2 clearfix">
 	    <div class="col-md-3 col-sm-6 column col1 text-center">
 	        <h2 class="what">What</h2>
-	        <p>We focus on exhibitions as a module to follow Cuban artists\' activity around the world. Exhibitions are normally accompanied by a catalogue so we want to collect data about publications as printed evidences of the shows. As one wise man said once “Exhibitions pass but catalogues remain”.</p>
+	        <p>We focus on exhibitions as a module to follow Cuban artists\' activity around the world. But, as one wise man said once “Exhibitions pass but catalogues remain”.</p>
 	        <div class="tb-rl coloredWhat">{</div>
             <p class="p-links text-center">
                 <a class="home-list btn btn-default btn-what" href="directory">Exhibitions</a> <a class="home-list btn btn-default btn-what" href="directory/catalogs">Catalogs</a>
@@ -488,7 +488,7 @@ We want to know what you think, because your opinion matters to us. Do you ha
 	    </div>
 	    <div class="col-md-3 col-sm-6 column col2 text-center">
             <h2 class="when">When</h2>
-            <p>Everybody needs an agenda! Here you can visualize Cuban art exhibitions on a calendar, look what is on show now or discover upcoming exhibitions. Moreover we are interested in past events so take a look in the archive section. Remember you can add this calendar to your calendar app. Find out how here!</p>
+            <p>Everybody needs an agenda! Here you can visualize Cuban art exhibitions on a calendar, look what is on show or upcoming, take a look in the archive... Remember you can <a href="help">add this calendar to your calendar app!</a></p>
 	        <div class="tb-rl coloredWhen">{</div>
             <p class="p-links text-center">
                 <a class="home-list btn btn-default btn-when" href="calendar">Calendar</a> <a class="home-list btn btn-default btn-when" href="calendar/archive">Archive</a> <a class="home-list btn btn-default btn-when" href="calendar/upcoming">Upcoming</a>
@@ -515,14 +515,14 @@ We want to know what you think, because your opinion matters to us. Do you ha
     <div class="norow norow-3 clearfix">
 	    <div class="col-md-4 col-md-offset-2 col5 column">
 	    <h2>Map</h2>
-        <a class="front-img-link" href="map"><img src="sites/default/files/map1.png" class="front-map img-responsive" /></a>
+        <a class="front-img-link" href="map"><img src="<?php print base_path() . \'sites/default/files/structure/map1.png\';?>" class="front-map img-responsive" /></a>
         </div>
         <div class="col-md-4 col6 column">
 	    <h2>Calendar</h2>
-        <a class="front-img-link" href="calendar"><img src="sites/default/files/calendar1.png" class="front-calendar img-responsive" /></a>
+        <a class="front-img-link" href="calendar"><img src="<?php print base_path() . \'sites/default/files/structure/calendar1.png\';?>" class="front-calendar img-responsive" /></a>
         </div>
     </div>',
-      'format' => 'full_html',
+      'format' => 'php_code',
       'substitute' => TRUE,
     );
     $pane->cache = array();

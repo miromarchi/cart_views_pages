@@ -192,7 +192,7 @@ function cart_views_pages_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Cart view curriculum';
+  $view->human_name = 'Cart curriculum';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -1490,7 +1490,7 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['header']['result']['table'] = 'views';
   $handler->display->display_options['header']['result']['field'] = 'result';
   $handler->display->display_options['header']['result']['label'] = 'Count';
-  $handler->display->display_options['header']['result']['content'] = '<span class="badge badge-publisher" title="exhibits hosted here">@total</span>';
+  $handler->display->display_options['header']['result']['content'] = '<span class="badge badge-publisher" title="Catalogs published">@total</span>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: referencing from field_cart_publisher */
   $handler->display->display_options['relationships']['reverse_field_cart_publisher_node']['id'] = 'reverse_field_cart_publisher_node';
@@ -1554,6 +1554,111 @@ function cart_views_pages_views_default_views() {
       'label' => 'Publisher: Nid',
     ),
   );
+
+  /* Display: Artists represented */
+  $handler = $view->new_display('panel_pane', 'Artists represented', 'panel_pane_12');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Artists represented';
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'exhibit clearfix';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_cart_representedby_node']['id'] = 'reverse_field_cart_representedby_node';
+  $handler->display->display_options['relationships']['reverse_field_cart_representedby_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_cart_representedby_node']['field'] = 'reverse_field_cart_representedby_node';
+  $handler->display->display_options['relationships']['reverse_field_cart_representedby_node']['label'] = 'referencing from field_cart_representedby';
+  $handler->display->display_options['relationships']['reverse_field_cart_representedby_node']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_cart_image']['id'] = 'field_cart_image';
+  $handler->display->display_options['fields']['field_cart_image']['table'] = 'field_data_field_cart_image';
+  $handler->display->display_options['fields']['field_cart_image']['field'] = 'field_cart_image';
+  $handler->display->display_options['fields']['field_cart_image']['relationship'] = 'reverse_field_cart_representedby_node';
+  $handler->display->display_options['fields']['field_cart_image']['label'] = '';
+  $handler->display->display_options['fields']['field_cart_image']['alter']['text'] = '[field_cart_image]
+[field_cart_image-fid]
+"<img src="[field_cart_image-fid]" class="img-responsive img-rounded" />"';
+  $handler->display->display_options['fields']['field_cart_image']['element_class'] = 'cv-exhibit';
+  $handler->display->display_options['fields']['field_cart_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_cart_image']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_cart_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_cart_image']['settings'] = array(
+    'image_style' => 'cart_img_circle_icon',
+    'image_link' => 'content',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'reverse_field_cart_representedby_node';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h4';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['hide_empty'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'cart_organization' => 'cart_organization',
+  );
+  $handler->display->display_options['pane_category']['name'] = 'Cart panes';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 'use_pager';
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'user',
+      'context' => 'entity:node.field_cart_artist',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Venue: Nid',
+    ),
+  );
   $export['cart_view_curriculum'] = $view;
 
   $view = new view();
@@ -1582,14 +1687,15 @@ function cart_views_pages_views_default_views() {
     'nid' => 'nid',
     'field_cart_links_web' => 'field_cart_links_web',
     'field_cart_blog_link' => 'field_cart_blog_link',
+    'field_cart_rss_link' => 'field_cart_rss_link',
     'field_cart_facebook_link' => 'field_cart_facebook_link',
     'field_cart_twitter_link' => 'field_cart_twitter_link',
     'field_cart_google_link' => 'field_cart_google_link',
+    'field_cart_linkedin_link' => 'field_cart_linkedin_link',
+    'field_cart_youtube_link' => 'field_cart_youtube_link',
     'field_cart_instagram_link' => 'field_cart_instagram_link',
     'field_cart_flickr_link' => 'field_cart_flickr_link',
-    'field_cart_youtube_link' => 'field_cart_youtube_link',
-    'field_cart_rss_link' => 'field_cart_rss_link',
-    'field_cart_linkedin_link' => 'field_cart_linkedin_link',
+    'field_cart_wikipedia_link' => 'field_cart_wikipedia_link',
   );
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   /* Field: Content: Nid */
@@ -1605,7 +1711,7 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['fields']['field_cart_links_web']['field'] = 'field_cart_links_web';
   $handler->display->display_options['fields']['field_cart_links_web']['label'] = '';
   $handler->display->display_options['fields']['field_cart_links_web']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_cart_links_web']['alter']['text'] = '<a href="[field_cart_links_web-url]" target="_blank" title="[field_cart_links_web-title]"><i class="fa fa-external-link-square fa-2x"></i></a>';
+  $handler->display->display_options['fields']['field_cart_links_web']['alter']['text'] = '<a href="[field_cart_links_web-url]" target="_blank" title="Main website - [field_cart_links_web-title]"><i class="fa fa-external-link-square fa-2x"></i></a>';
   $handler->display->display_options['fields']['field_cart_links_web']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_cart_links_web']['click_sort_column'] = 'url';
   /* Field: Content: Blog link */
@@ -1614,9 +1720,27 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['fields']['field_cart_blog_link']['field'] = 'field_cart_blog_link';
   $handler->display->display_options['fields']['field_cart_blog_link']['label'] = '';
   $handler->display->display_options['fields']['field_cart_blog_link']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_cart_blog_link']['alter']['text'] = '<a href="[field_cart_blog_link-url]" target="_blank" title="[field_cart_blog_link-title]"><i class="fa fa-newspaper-o fa-2x"></i></a>';
+  $handler->display->display_options['fields']['field_cart_blog_link']['alter']['text'] = '<a href="[field_cart_blog_link-url]" target="_blank" title="Blog - [field_cart_blog_link-title]"><i class="fa fa-wordpress fa-2x"></i></a>';
   $handler->display->display_options['fields']['field_cart_blog_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_cart_blog_link']['click_sort_column'] = 'url';
+  /* Field: Content: RSS link */
+  $handler->display->display_options['fields']['field_cart_rss_link']['id'] = 'field_cart_rss_link';
+  $handler->display->display_options['fields']['field_cart_rss_link']['table'] = 'field_data_field_cart_rss_link';
+  $handler->display->display_options['fields']['field_cart_rss_link']['field'] = 'field_cart_rss_link';
+  $handler->display->display_options['fields']['field_cart_rss_link']['label'] = '';
+  $handler->display->display_options['fields']['field_cart_rss_link']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_cart_rss_link']['alter']['text'] = '<a href="[field_cart_rss_link-url]" target="_blank" title="RSS feed - [field_cart_rss_link-title]"><i class="fa fa-rss-square fa-2x"></i></a>';
+  $handler->display->display_options['fields']['field_cart_rss_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_cart_rss_link']['click_sort_column'] = 'url';
+  /* Field: Content: Wikipedia link */
+  $handler->display->display_options['fields']['field_cart_wikipedia_link']['id'] = 'field_cart_wikipedia_link';
+  $handler->display->display_options['fields']['field_cart_wikipedia_link']['table'] = 'field_data_field_cart_wikipedia_link';
+  $handler->display->display_options['fields']['field_cart_wikipedia_link']['field'] = 'field_cart_wikipedia_link';
+  $handler->display->display_options['fields']['field_cart_wikipedia_link']['label'] = '';
+  $handler->display->display_options['fields']['field_cart_wikipedia_link']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_cart_wikipedia_link']['alter']['text'] = '<a href="[field_cart_wikipedia_link-url]" target="_blank" title="Wikipedia page - [field_cart_wikipedia_link-title]"><span class="fa-2x">W</i></a>';
+  $handler->display->display_options['fields']['field_cart_wikipedia_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_cart_wikipedia_link']['click_sort_column'] = 'url';
   /* Field: Content: Facebook link */
   $handler->display->display_options['fields']['field_cart_facebook_link']['id'] = 'field_cart_facebook_link';
   $handler->display->display_options['fields']['field_cart_facebook_link']['table'] = 'field_data_field_cart_facebook_link';
@@ -1644,6 +1768,24 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['fields']['field_cart_google_link']['alter']['text'] = '<a href="[field_cart_google_link-url]" target="_blank" title="[field_cart_google_link-title]"><i class="fa fa-google-plus-square fa-2x"></i></a>';
   $handler->display->display_options['fields']['field_cart_google_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_cart_google_link']['click_sort_column'] = 'url';
+  /* Field: Content: Linkedin link */
+  $handler->display->display_options['fields']['field_cart_linkedin_link']['id'] = 'field_cart_linkedin_link';
+  $handler->display->display_options['fields']['field_cart_linkedin_link']['table'] = 'field_data_field_cart_linkedin_link';
+  $handler->display->display_options['fields']['field_cart_linkedin_link']['field'] = 'field_cart_linkedin_link';
+  $handler->display->display_options['fields']['field_cart_linkedin_link']['label'] = '';
+  $handler->display->display_options['fields']['field_cart_linkedin_link']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_cart_linkedin_link']['alter']['text'] = '<a href="[field_cart_linkedin_link-url]" target="_blank" title="[field_cart_linkedin_link-title]"><i class="fa fa-linkedin-square fa-2x"></i></a>';
+  $handler->display->display_options['fields']['field_cart_linkedin_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_cart_linkedin_link']['click_sort_column'] = 'url';
+  /* Field: Content: Youtube link */
+  $handler->display->display_options['fields']['field_cart_youtube_link']['id'] = 'field_cart_youtube_link';
+  $handler->display->display_options['fields']['field_cart_youtube_link']['table'] = 'field_data_field_cart_youtube_link';
+  $handler->display->display_options['fields']['field_cart_youtube_link']['field'] = 'field_cart_youtube_link';
+  $handler->display->display_options['fields']['field_cart_youtube_link']['label'] = '';
+  $handler->display->display_options['fields']['field_cart_youtube_link']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_cart_youtube_link']['alter']['text'] = '<a href="[field_cart_youtube_link-url]" target="_blank" title="[field_cart_youtube_link-title]"><i class="fa fa-youtube fa-2x"></i></a>';
+  $handler->display->display_options['fields']['field_cart_youtube_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_cart_youtube_link']['click_sort_column'] = 'url';
   /* Field: Content: Instagram link */
   $handler->display->display_options['fields']['field_cart_instagram_link']['id'] = 'field_cart_instagram_link';
   $handler->display->display_options['fields']['field_cart_instagram_link']['table'] = 'field_data_field_cart_instagram_link';
@@ -1662,33 +1804,6 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['fields']['field_cart_flickr_link']['alter']['text'] = '<a href="[field_cart_flickr_link-url]" target="_blank" title="[field_cart_flickr_link-title]"><i class="fa fa-flickr fa-2x"></i></a>';
   $handler->display->display_options['fields']['field_cart_flickr_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_cart_flickr_link']['click_sort_column'] = 'url';
-  /* Field: Content: Youtube link */
-  $handler->display->display_options['fields']['field_cart_youtube_link']['id'] = 'field_cart_youtube_link';
-  $handler->display->display_options['fields']['field_cart_youtube_link']['table'] = 'field_data_field_cart_youtube_link';
-  $handler->display->display_options['fields']['field_cart_youtube_link']['field'] = 'field_cart_youtube_link';
-  $handler->display->display_options['fields']['field_cart_youtube_link']['label'] = '';
-  $handler->display->display_options['fields']['field_cart_youtube_link']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_cart_youtube_link']['alter']['text'] = '<a href="[field_cart_youtube_link-url]" target="_blank" title="[field_cart_youtube_link-title]"><i class="fa fa-youtube fa-2x"></i></a>';
-  $handler->display->display_options['fields']['field_cart_youtube_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_cart_youtube_link']['click_sort_column'] = 'url';
-  /* Field: Content: Linkedin link */
-  $handler->display->display_options['fields']['field_cart_linkedin_link']['id'] = 'field_cart_linkedin_link';
-  $handler->display->display_options['fields']['field_cart_linkedin_link']['table'] = 'field_data_field_cart_linkedin_link';
-  $handler->display->display_options['fields']['field_cart_linkedin_link']['field'] = 'field_cart_linkedin_link';
-  $handler->display->display_options['fields']['field_cart_linkedin_link']['label'] = '';
-  $handler->display->display_options['fields']['field_cart_linkedin_link']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_cart_linkedin_link']['alter']['text'] = '<a href="[field_cart_linkedin_link-url]" target="_blank" title="[field_cart_linkedin_link-title]"><i class="fa fa-linkedin-square fa-2x"></i></a>';
-  $handler->display->display_options['fields']['field_cart_linkedin_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_cart_linkedin_link']['click_sort_column'] = 'url';
-  /* Field: Content: RSS link */
-  $handler->display->display_options['fields']['field_cart_rss_link']['id'] = 'field_cart_rss_link';
-  $handler->display->display_options['fields']['field_cart_rss_link']['table'] = 'field_data_field_cart_rss_link';
-  $handler->display->display_options['fields']['field_cart_rss_link']['field'] = 'field_cart_rss_link';
-  $handler->display->display_options['fields']['field_cart_rss_link']['label'] = '';
-  $handler->display->display_options['fields']['field_cart_rss_link']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_cart_rss_link']['alter']['text'] = '<a href="[field_cart_rss_link-url]" target="_blank" title="[field_cart_rss_link-title]"><i class="fa fa-rss-square fa-2x"></i></a>';
-  $handler->display->display_options['fields']['field_cart_rss_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_cart_rss_link']['click_sort_column'] = 'url';
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
@@ -1708,6 +1823,42 @@ function cart_views_pages_views_default_views() {
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['pane_category']['name'] = 'Cart panes';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Image gallery link */
+  $handler = $view->new_display('panel_pane', 'Image gallery link', 'panel_pane_2');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'nid' => 'nid',
+    'field_cart_links_web' => 'field_cart_links_web',
+    'field_cart_blog_link' => 'field_cart_blog_link',
+    'field_cart_rss_link' => 'field_cart_rss_link',
+    'field_cart_facebook_link' => 'field_cart_facebook_link',
+    'field_cart_twitter_link' => 'field_cart_twitter_link',
+    'field_cart_google_link' => 'field_cart_google_link',
+    'field_cart_linkedin_link' => 'field_cart_linkedin_link',
+    'field_cart_youtube_link' => 'field_cart_youtube_link',
+    'field_cart_instagram_link' => 'field_cart_instagram_link',
+    'field_cart_flickr_link' => 'field_cart_flickr_link',
+    'field_cart_imagegallery_link' => 'field_cart_imagegallery_link',
+  );
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Image gallery link */
+  $handler->display->display_options['fields']['field_cart_imagegallery_link']['id'] = 'field_cart_imagegallery_link';
+  $handler->display->display_options['fields']['field_cart_imagegallery_link']['table'] = 'field_data_field_cart_imagegallery_link';
+  $handler->display->display_options['fields']['field_cart_imagegallery_link']['field'] = 'field_cart_imagegallery_link';
+  $handler->display->display_options['fields']['field_cart_imagegallery_link']['label'] = '';
+  $handler->display->display_options['fields']['field_cart_imagegallery_link']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_cart_imagegallery_link']['alter']['text'] = '<strong>Main image gallery:</strong> <a href="[field_cart_imagegallery_link-url]" target="_blank" title="Main image gallery - [field_cart_imagegallery_link-title]"><i class="fa fa-photo fa-2x"></i></a>';
+  $handler->display->display_options['fields']['field_cart_imagegallery_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_cart_imagegallery_link']['click_sort_column'] = 'url';
   $handler->display->display_options['pane_category']['name'] = 'Cart panes';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $export['cart_view_links'] = $view;
@@ -1778,7 +1929,7 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Body */
+  /* Field: Content: Description */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -2582,6 +2733,92 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['cart_view_lists'] = $view;
+
+  $view = new view();
+  $view->name = 'cart_view_taxonomy';
+  $view->description = 'A view to emulate Drupal core\'s handling of taxonomy/term.';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Cart taxonomy';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['style_plugin'] = 'masonry_views';
+  $handler->display->display_options['style_options']['row_class'] = 'col-xs-12 col-sm-6 col-md-4 col-lg-3';
+  $handler->display->display_options['style_options']['masonry_resizable'] = TRUE;
+  $handler->display->display_options['style_options']['masonry_animated'] = TRUE;
+  $handler->display->display_options['style_options']['masonry_fit_width'] = FALSE;
+  $handler->display->display_options['style_options']['masonry_rtl'] = FALSE;
+  $handler->display->display_options['style_options']['masonry_images_first'] = TRUE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
+  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['exception']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['term_node_tid_depth']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['term_node_tid_depth']['title'] = '%1';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['break_phrase'] = TRUE;
+  /* Contextual filter: Content: Has taxonomy term ID depth modifier */
+  $handler->display->display_options['arguments']['term_node_tid_depth_modifier']['id'] = 'term_node_tid_depth_modifier';
+  $handler->display->display_options['arguments']['term_node_tid_depth_modifier']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth_modifier']['field'] = 'term_node_tid_depth_modifier';
+  $handler->display->display_options['arguments']['term_node_tid_depth_modifier']['exception']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['term_node_tid_depth_modifier']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['term_node_tid_depth_modifier']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth_modifier']['specify_validation'] = TRUE;
+  /* Filter criterion: Content: Published or admin */
+  $handler->display->display_options['filters']['status_extra']['id'] = 'status_extra';
+  $handler->display->display_options['filters']['status_extra']['table'] = 'node';
+  $handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
+  $handler->display->display_options['filters']['status_extra']['group'] = 0;
+  $handler->display->display_options['filters']['status_extra']['expose']['operator'] = FALSE;
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'taxonomy/term/%';
+
+  /* Display: Feed */
+  $handler = $view->new_display('feed', 'Feed', 'feed');
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = 15;
+  $handler->display->display_options['style_plugin'] = 'rss';
+  $handler->display->display_options['row_plugin'] = 'node_rss';
+  $handler->display->display_options['path'] = 'taxonomy/term/%/%/feed';
+  $handler->display->display_options['displays'] = array(
+    'page' => 'page',
+    'default' => 0,
+    'panel_pane_1' => 0,
+  );
+
+  /* Display: pane */
+  $handler = $view->new_display('panel_pane', 'pane', 'panel_pane_1');
+  $handler->display->display_options['enabled'] = FALSE;
+  $handler->display->display_options['pane_category']['name'] = 'Cart panes';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $export['cart_view_taxonomy'] = $view;
 
   return $export;
 }
