@@ -382,8 +382,6 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['relationship'] = 'reverse_field_cart_artist_node';
   $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['suffix'] = ' (artist)';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h4';
@@ -1929,7 +1927,7 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Description */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -1977,7 +1975,7 @@ function cart_views_pages_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filter criterion: Content: Based - Locality (i.e. City) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_cart_based_locality']['id'] = 'field_cart_based_locality';
   $handler->display->display_options['filters']['field_cart_based_locality']['table'] = 'field_data_field_cart_based';
   $handler->display->display_options['filters']['field_cart_based_locality']['field'] = 'field_cart_based_locality';
@@ -1995,11 +1993,6 @@ function cart_views_pages_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['field_cart_based_locality']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['field_cart_based_locality']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['field_cart_based_locality']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['field_cart_based_locality']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['field_cart_based_locality']['expose']['autocomplete_dependent'] = 0;
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title_1']['id'] = 'title_1';
   $handler->display->display_options['filters']['title_1']['table'] = 'node';
@@ -2093,7 +2086,7 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Content: Based - Locality (i.e. City) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_cart_based_locality']['id'] = 'field_cart_based_locality';
   $handler->display->display_options['filters']['field_cart_based_locality']['table'] = 'field_data_field_cart_based';
   $handler->display->display_options['filters']['field_cart_based_locality']['field'] = 'field_cart_based_locality';
@@ -2111,11 +2104,6 @@ function cart_views_pages_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['field_cart_based_locality']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['field_cart_based_locality']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['field_cart_based_locality']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['field_cart_based_locality']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['field_cart_based_locality']['expose']['autocomplete_dependent'] = 0;
   $handler->display->display_options['path'] = 'directory/curators';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Curators';
@@ -2609,7 +2597,7 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Content: Based - Locality (i.e. City) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_cart_based_locality']['id'] = 'field_cart_based_locality';
   $handler->display->display_options['filters']['field_cart_based_locality']['table'] = 'field_data_field_cart_based';
   $handler->display->display_options['filters']['field_cart_based_locality']['field'] = 'field_cart_based_locality';
@@ -2627,11 +2615,6 @@ function cart_views_pages_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['field_cart_based_locality']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['field_cart_based_locality']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['field_cart_based_locality']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['field_cart_based_locality']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['field_cart_based_locality']['expose']['autocomplete_dependent'] = 0;
   $handler->display->display_options['path'] = 'directory/sponsors';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Sporsors';

@@ -23,7 +23,7 @@ function cart_views_pages_default_page_manager_pages() {
     'type' => 'normal',
     'title' => 'About',
     'name' => 'main-menu',
-    'weight' => '99',
+    'weight' => '7',
     'parent' => array(
       'type' => 'none',
       'title' => '',
