@@ -21,7 +21,6 @@ features[page_manager_pages][] = cart_about
 features[page_manager_pages][] = cart_add_exhibit
 features[page_manager_pages][] = cart_editing
 features[page_manager_pages][] = cart_home
-features[variable][] = entity_view_modes
 features[views_view][] = cart_view_completeness
 features[views_view][] = cart_view_curriculum
 features[views_view][] = cart_view_links
