@@ -393,7 +393,7 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['fields']['field_cart_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_cart_date']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_cart_date']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'date_format_cart_date_day',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -557,7 +557,7 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['fields']['field_cart_date']['label'] = '';
   $handler->display->display_options['fields']['field_cart_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_cart_date']['settings'] = array(
-    'format_type' => 'cart_date_day',
+    'format_type' => 'date_format_cart_date_day',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -638,7 +638,7 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['fields']['field_cart_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_cart_date']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_cart_date']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'date_format_cart_date_day',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -766,7 +766,7 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['fields']['field_cart_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_cart_date']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_cart_date']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'date_format_cart_date_day',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -1002,7 +1002,7 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['fields']['field_cart_date']['label'] = '';
   $handler->display->display_options['fields']['field_cart_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_cart_date']['settings'] = array(
-    'format_type' => 'cart_date_day',
+    'format_type' => 'date_format_cart_date_day',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -1968,12 +1968,6 @@ function cart_views_pages_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_field'] = 'title';
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_dependent'] = 0;
 
   /* Display: Curators */
   $handler = $view->new_display('page', 'Curators', 'page_2');
@@ -2036,12 +2030,6 @@ function cart_views_pages_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title_1']['id'] = 'title_1';
   $handler->display->display_options['filters']['title_1']['table'] = 'node';
@@ -2060,12 +2048,6 @@ function cart_views_pages_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_field'] = 'title';
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_dependent'] = 0;
   $handler->display->display_options['path'] = 'directory/curators';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Curators';
@@ -2164,11 +2146,6 @@ function cart_views_pages_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['field_cart_location_value']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['field_cart_location_value']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['field_cart_location_value']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['field_cart_location_value']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['field_cart_location_value']['expose']['autocomplete_dependent'] = 0;
   /* Filter criterion: Content: Venue type (field_cart_venue_type) */
   $handler->display->display_options['filters']['field_cart_venue_type_tid']['id'] = 'field_cart_venue_type_tid';
   $handler->display->display_options['filters']['field_cart_venue_type_tid']['table'] = 'field_data_field_cart_venue_type';
@@ -2247,12 +2224,6 @@ function cart_views_pages_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title_1']['id'] = 'title_1';
   $handler->display->display_options['filters']['title_1']['table'] = 'node';
@@ -2270,12 +2241,6 @@ function cart_views_pages_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_field'] = 'title';
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_dependent'] = 0;
   /* Filter criterion: Content: Year published (field_cart_year) */
   $handler->display->display_options['filters']['field_cart_year_tid']['id'] = 'field_cart_year_tid';
   $handler->display->display_options['filters']['field_cart_year_tid']['table'] = 'field_data_field_cart_year';
@@ -2310,12 +2275,6 @@ function cart_views_pages_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['title_2']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title_2']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['title_2']['expose']['autocomplete_field'] = 'title';
-  $handler->display->display_options['filters']['title_2']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title_2']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title_2']['expose']['autocomplete_dependent'] = 0;
   $handler->display->display_options['path'] = 'directory/catalogs';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Catalogs';
@@ -2380,12 +2339,6 @@ function cart_views_pages_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title_1']['id'] = 'title_1';
   $handler->display->display_options['filters']['title_1']['table'] = 'node';
@@ -2403,12 +2356,6 @@ function cart_views_pages_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_field'] = 'title';
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_dependent'] = 0;
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title_2']['id'] = 'title_2';
   $handler->display->display_options['filters']['title_2']['table'] = 'node';
@@ -2426,12 +2373,6 @@ function cart_views_pages_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['title_2']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title_2']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['title_2']['expose']['autocomplete_field'] = 'title';
-  $handler->display->display_options['filters']['title_2']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title_2']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title_2']['expose']['autocomplete_dependent'] = 0;
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title_3']['id'] = 'title_3';
   $handler->display->display_options['filters']['title_3']['table'] = 'node';
@@ -2449,12 +2390,6 @@ function cart_views_pages_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['title_3']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title_3']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['title_3']['expose']['autocomplete_field'] = 'title';
-  $handler->display->display_options['filters']['title_3']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title_3']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title_3']['expose']['autocomplete_dependent'] = 0;
   /* Filter criterion: Content: Location (field_cart_location) */
   $handler->display->display_options['filters']['field_cart_location_value']['id'] = 'field_cart_location_value';
   $handler->display->display_options['filters']['field_cart_location_value']['table'] = 'field_data_field_cart_location';
@@ -2472,11 +2407,6 @@ function cart_views_pages_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['field_cart_location_value']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['field_cart_location_value']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['field_cart_location_value']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['field_cart_location_value']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['field_cart_location_value']['expose']['autocomplete_dependent'] = 0;
   $handler->display->display_options['path'] = 'directory/exhibits';
   $handler->display->display_options['menu']['type'] = 'default tab';
   $handler->display->display_options['menu']['title'] = 'Exhibits';
@@ -2553,12 +2483,6 @@ function cart_views_pages_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title_1']['id'] = 'title_1';
   $handler->display->display_options['filters']['title_1']['table'] = 'node';
@@ -2577,12 +2501,6 @@ function cart_views_pages_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_field'] = 'title';
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_dependent'] = 0;
   $handler->display->display_options['path'] = 'directory/sponsors';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Sporsors';
@@ -2647,12 +2565,6 @@ function cart_views_pages_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
   /* Filter criterion: Content: Location (field_cart_location) */
   $handler->display->display_options['filters']['field_cart_location_value']['id'] = 'field_cart_location_value';
   $handler->display->display_options['filters']['field_cart_location_value']['table'] = 'field_data_field_cart_location';
@@ -2670,11 +2582,6 @@ function cart_views_pages_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['field_cart_location_value']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['field_cart_location_value']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['field_cart_location_value']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['field_cart_location_value']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['field_cart_location_value']['expose']['autocomplete_dependent'] = 0;
   $handler->display->display_options['path'] = 'directory/publishers';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Publishers';
