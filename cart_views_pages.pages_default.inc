@@ -505,7 +505,7 @@ We want to know what you think, because your opinion matters to us. Do you ha
             <p>Not only a list of venues hosting Cuban art exhibitions but also an interactive world map you can navigate to discover what is going on about Cuban art even on the other side of the Planet!</p>
 	        <div class="tb-rl coloredWhere">{</div>
 	        <p class="p-links text-center">
-                <a class="home-list btn btn-default btn-where" href="directory/venues">Venues</a> <a class="home-list btn btn-default btn-where" href="map">Map</a>
+                <a class="home-list btn btn-default btn-where" href="directory/venues">Venues</a> <a class="home-list btn btn-default btn-where" href="map">Exhibits map</a> <a class="home-list btn btn-default btn-where" href="map/venues">Venues map</a>
             </p>
 	    </div>
 	    <div class="col-md-3 col-sm-6 column col4 text-center">
