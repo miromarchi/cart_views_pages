@@ -393,7 +393,7 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['fields']['field_cart_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_cart_date']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_cart_date']['settings'] = array(
-    'format_type' => 'date_format_cart_date_day',
+    'format_type' => 'cart_date_day',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -557,7 +557,7 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['fields']['field_cart_date']['label'] = '';
   $handler->display->display_options['fields']['field_cart_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_cart_date']['settings'] = array(
-    'format_type' => 'date_format_cart_date_day',
+    'format_type' => 'cart_date_day',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -638,7 +638,7 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['fields']['field_cart_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_cart_date']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_cart_date']['settings'] = array(
-    'format_type' => 'date_format_cart_date_day',
+    'format_type' => 'cart_date_day',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -766,7 +766,7 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['fields']['field_cart_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_cart_date']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_cart_date']['settings'] = array(
-    'format_type' => 'date_format_cart_date_day',
+    'format_type' => 'cart_date_day',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -1002,7 +1002,7 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['fields']['field_cart_date']['label'] = '';
   $handler->display->display_options['fields']['field_cart_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_cart_date']['settings'] = array(
-    'format_type' => 'date_format_cart_date_day',
+    'format_type' => 'cart_date_day',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
