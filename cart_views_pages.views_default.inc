@@ -114,7 +114,7 @@ function cart_views_pages_views_default_views() {
   /* Display: Completeness page */
   $handler = $view->new_display('page', 'Completeness page', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Exhibits completeness';
+  $handler->display->display_options['title'] = 'Content completeness';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
@@ -185,6 +185,33 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['pane_category']['name'] = 'Cart panes';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $translatables['cart_view_completeness'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Post date'),
+    t('Completeness'),
+    t('1'),
+    t('bar'),
+    t('Completeness page'),
+    t('Content completeness'),
+    t('Content type'),
+    t('Title'),
+    t('Complete pane'),
+    t('All'),
+    t('Cart panes'),
+  );
   $export['cart_view_completeness'] = $view;
 
   $view = new view();
@@ -1641,6 +1668,69 @@ function cart_views_pages_views_default_views() {
       'label' => 'Venue: Nid',
     ),
   );
+  $translatables['cart_view_curriculum'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('referencing from field_cart_artist'),
+    t('referencing from field_cart_curator'),
+    t('referencing from field_cart_sponsor'),
+    t('[field_cart_image]
+[field_cart_image-fid]
+"<img src="[field_cart_image-fid]" class="img-responsive img-rounded" />"'),
+    t('[title]'),
+    t(' (artist)'),
+    t('Curator in'),
+    t('Sponsor in'),
+    t('All'),
+    t('Curriculum pane'),
+    t('Exhibits'),
+    t('Cart panes'),
+    t('Artist cv count'),
+    t('Displays only exhibits count for artists nodes'),
+    t('count'),
+    t('<span class="badge badge-artist" title="related exhibit entries">@total</span>'),
+    t('Curator Attachment'),
+    t(' (curator)'),
+    t('venue cv'),
+    t('Hosted here'),
+    t('referencing from field_cart_venue'),
+    t('catalog cv'),
+    t('Catalog of'),
+    t('referencing from field_cart_catalog'),
+    t('Catalog cv rendered'),
+    t('Sponsor Attachment'),
+    t(' (sponsor)'),
+    t('Curator cv count'),
+    t('Displays only exhibits count for curator nodes'),
+    t('<span class="badge" title="related exhibit entries">@total</span>'),
+    t('venue cv count'),
+    t('Count'),
+    t('<span class="badge badge-venue" title="exhibits hosted here">@total</span>'),
+    t('Sponsor cv count'),
+    t('Displays only exhibits count for sponsor nodes'),
+    t('<span class="badge" title="exhibits sponsored">@total</span>'),
+    t('Sponsor (org) cv count'),
+    t('Displays only exhibits count for sponsor organization nodes'),
+    t('publisher cv'),
+    t('Catalogs'),
+    t('referencing from field_cart_publisher'),
+    t('Publisher cv count'),
+    t('<span class="badge badge-publisher" title="Catalogs published">@total</span>'),
+    t('Artists represented'),
+    t('referencing from field_cart_representedby'),
+  );
   $export['cart_view_curriculum'] = $view;
 
   $view = new view();
@@ -1843,6 +1933,31 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['fields']['field_cart_imagegallery_link']['click_sort_column'] = 'url';
   $handler->display->display_options['pane_category']['name'] = 'Cart panes';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $translatables['cart_view_links'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('<a href="[field_cart_links_web-url]" target="_blank" title="Main website - [field_cart_links_web-title]"><i class="fa fa-external-link-square fa-2x"></i></a>'),
+    t('<a href="[field_cart_blog_link-url]" target="_blank" title="Blog - [field_cart_blog_link-title]"><i class="fa fa-wordpress fa-2x"></i></a>'),
+    t('<a href="[field_cart_rss_link-url]" target="_blank" title="RSS feed - [field_cart_rss_link-title]"><i class="fa fa-rss-square fa-2x"></i></a>'),
+    t('<a href="[field_cart_wikipedia_link-url]" target="_blank" title="Wikipedia page - [field_cart_wikipedia_link-title]"><span class="fa-2x">W</i></a>'),
+    t('<a href="[field_cart_facebook_link-url]" target="_blank" title="[field_cart_facebook_link-title]"><i class="fa fa-facebook-square fa-2x"></i></a>'),
+    t('<a href="[field_cart_twitter_link-url]" target="_blank" title="[field_cart_twitter_link-title]"><i class="fa fa-twitter-square fa-2x"></i></a>'),
+    t('<a href="[field_cart_google_link-url]" target="_blank" title="[field_cart_google_link-title]"><i class="fa fa-google-plus-square fa-2x"></i></a>'),
+    t('<a href="[field_cart_linkedin_link-url]" target="_blank" title="[field_cart_linkedin_link-title]"><i class="fa fa-linkedin-square fa-2x"></i></a>'),
+    t('<a href="[field_cart_youtube_link-url]" target="_blank" title="[field_cart_youtube_link-title]"><i class="fa fa-youtube fa-2x"></i></a>'),
+    t('<a href="[field_cart_instagram_link-url]" target="_blank" title="[field_cart_instagram_link-title]"><i class="fa fa-instagram fa-2x"></i></a>'),
+    t('<a href="[field_cart_flickr_link-url]" target="_blank" title="[field_cart_flickr_link-title]"><i class="fa fa-flickr fa-2x"></i></a>'),
+    t('All'),
+    t('Content pane'),
+    t('Cart panes'),
+    t('Image gallery link'),
+    t('<strong>Main image gallery:</strong> <a href="[field_cart_imagegallery_link-url]" target="_blank" title="Main image gallery - [field_cart_imagegallery_link-title]"><i class="fa fa-photo fa-2x"></i></a>'),
+  );
   $export['cart_view_links'] = $view;
 
   $view = new view();
@@ -2672,6 +2787,62 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $translatables['cart_view_lists'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('no results'),
+    t('<div class="alert alert-info alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+  No results were returned by the query. Please <strong>reset the filter</strong> or try again with different filtering options.
+</div>'),
+    t('referencing from field_cart_artist'),
+    t('Search artist'),
+    t('Filter by exhibit'),
+    t('Curators'),
+    t('referencing from field_cart_curator'),
+    t('Search curator'),
+    t('Filter by ehibit'),
+    t('Artists'),
+    t('Based (location)'),
+    t('Venues'),
+    t('referencing from field_cart_venue'),
+    t('Location (address)'),
+    t('Venue type'),
+    t('Catalogs'),
+    t('referenced from field_cart_editor'),
+    t('referenced from field_cart_publisher'),
+    t('Edited by'),
+    t('Publisher'),
+    t('Year published'),
+    t('Title'),
+    t('Exhibits'),
+    t('Exhibitions'),
+    t('referenced from field_cart_artist'),
+    t('referenced from field_cart_curator'),
+    t('referenced from field_cart_venue'),
+    t('Search exhibit'),
+    t('Artist'),
+    t('Curator/s'),
+    t('Venue'),
+    t('Sponsors'),
+    t('referencing from field_cart_sponsor'),
+    t('Search sponsor'),
+    t('Publishers'),
+    t('referencing from field_cart_publisher'),
+    t('Search publisher'),
+  );
   $export['cart_view_lists'] = $view;
 
   $view = new view();
@@ -2758,6 +2929,28 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'Cart panes';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $translatables['cart_view_taxonomy'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('All'),
+    t('%1'),
+    t('Page'),
+    t('Feed'),
+    t('pane'),
+    t('Cart panes'),
+  );
   $export['cart_view_taxonomy'] = $view;
 
   return $export;

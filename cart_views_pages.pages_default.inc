@@ -225,340 +225,6 @@ We want to know what you think, because your opinion matters to us. Do you ha
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
-  $page->name = 'cart_add_catalog';
-  $page->task = 'page';
-  $page->admin_title = 'Cart add catalog';
-  $page->admin_description = '';
-  $page->path = 'user/%user/add-catalog';
-  $page->access = array(
-    'plugins' => array(
-      0 => array(
-        'name' => 'perm',
-        'settings' => array(
-          'perm' => 'create cart_catalog content',
-        ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
-      ),
-    ),
-    'logic' => 'and',
-  );
-  $page->menu = array(
-    'type' => 'action',
-    'title' => 'Add catalog',
-    'name' => 'navigation',
-    'weight' => '0',
-    'parent' => array(
-      'type' => 'none',
-      'title' => '',
-      'name' => 'navigation',
-      'weight' => '0',
-    ),
-  );
-  $page->arguments = array(
-    'user' => array(
-      'id' => 1,
-      'identifier' => 'User: ID',
-      'name' => 'entity_id:user',
-      'settings' => array(),
-    ),
-  );
-  $page->conf = array(
-    'admin_paths' => FALSE,
-  );
-  $page->default_handlers = array();
-  $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
-  $handler->api_version = 1;
-  $handler->name = 'page_cart_add_catalog_http_response';
-  $handler->task = 'page';
-  $handler->subtask = 'cart_add_catalog';
-  $handler->handler = 'http_response';
-  $handler->weight = 0;
-  $handler->conf = array(
-    'title' => 'HTTP response code',
-    'contexts' => array(),
-    'relationships' => array(),
-    'code' => '301',
-    'destination' => 'node/add/cart-catalog',
-    'access' => array(
-      'logic' => 'and',
-    ),
-  );
-  $page->default_handlers[$handler->name] = $handler;
-  $pages['cart_add_catalog'] = $page;
-
-  $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
-  $page->api_version = 1;
-  $page->name = 'cart_add_exhibit';
-  $page->task = 'page';
-  $page->admin_title = 'Cart add exhibit';
-  $page->admin_description = '';
-  $page->path = 'user/%user/add-exhibit';
-  $page->access = array(
-    'plugins' => array(
-      0 => array(
-        'name' => 'perm',
-        'settings' => array(
-          'perm' => 'create cart_exhibition content',
-        ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
-      ),
-    ),
-    'logic' => 'and',
-    'type' => 'none',
-    'settings' => NULL,
-  );
-  $page->menu = array(
-    'type' => 'action',
-    'title' => 'Add exhibition',
-    'name' => 'navigation',
-    'weight' => '0',
-    'parent' => array(
-      'type' => 'none',
-      'title' => '',
-      'name' => 'navigation',
-      'weight' => '0',
-    ),
-  );
-  $page->arguments = array(
-    'user' => array(
-      'id' => 1,
-      'identifier' => 'User: ID',
-      'name' => 'entity_id:user',
-      'settings' => array(),
-    ),
-  );
-  $page->conf = array(
-    'admin_paths' => FALSE,
-  );
-  $page->default_handlers = array();
-  $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
-  $handler->api_version = 1;
-  $handler->name = 'page_cart_add_exhibit_http_response';
-  $handler->task = 'page';
-  $handler->subtask = 'cart_add_exhibit';
-  $handler->handler = 'http_response';
-  $handler->weight = 0;
-  $handler->conf = array(
-    'title' => 'HTTP response code',
-    'contexts' => array(),
-    'relationships' => array(),
-    'code' => '301',
-    'destination' => 'node/add/cart-exhibition',
-    'access' => array(
-      'logic' => 'and',
-    ),
-  );
-  $page->default_handlers[$handler->name] = $handler;
-  $pages['cart_add_exhibit'] = $page;
-
-  $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
-  $page->api_version = 1;
-  $page->name = 'cart_add_org';
-  $page->task = 'page';
-  $page->admin_title = 'Cart add organization';
-  $page->admin_description = '';
-  $page->path = 'user/%user/add-organization';
-  $page->access = array(
-    'plugins' => array(
-      0 => array(
-        'name' => 'perm',
-        'settings' => array(
-          'perm' => 'create cart_organization content',
-        ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
-      ),
-    ),
-    'logic' => 'and',
-  );
-  $page->menu = array(
-    'type' => 'action',
-    'title' => 'Add organization',
-    'name' => 'navigation',
-    'weight' => '0',
-    'parent' => array(
-      'type' => 'none',
-      'title' => '',
-      'name' => 'navigation',
-      'weight' => '0',
-    ),
-  );
-  $page->arguments = array(
-    'user' => array(
-      'id' => 1,
-      'identifier' => 'User: ID',
-      'name' => 'entity_id:user',
-      'settings' => array(),
-    ),
-  );
-  $page->conf = array(
-    'admin_paths' => FALSE,
-  );
-  $page->default_handlers = array();
-  $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
-  $handler->api_version = 1;
-  $handler->name = 'page_cart_add_org_http_response';
-  $handler->task = 'page';
-  $handler->subtask = 'cart_add_org';
-  $handler->handler = 'http_response';
-  $handler->weight = 0;
-  $handler->conf = array(
-    'title' => 'HTTP response code',
-    'contexts' => array(),
-    'relationships' => array(),
-    'code' => '301',
-    'destination' => 'node/add/cart-org',
-    'access' => array(
-      'logic' => 'and',
-    ),
-  );
-  $page->default_handlers[$handler->name] = $handler;
-  $pages['cart_add_org'] = $page;
-
-  $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
-  $page->api_version = 1;
-  $page->name = 'cart_add_person';
-  $page->task = 'page';
-  $page->admin_title = 'Cart add person';
-  $page->admin_description = '';
-  $page->path = 'user/%user/add-person';
-  $page->access = array(
-    'plugins' => array(
-      0 => array(
-        'name' => 'perm',
-        'settings' => array(
-          'perm' => 'create cart_person content',
-        ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
-      ),
-    ),
-    'logic' => 'and',
-  );
-  $page->menu = array(
-    'type' => 'action',
-    'title' => 'Add person',
-    'name' => 'navigation',
-    'weight' => '0',
-    'parent' => array(
-      'type' => 'none',
-      'title' => '',
-      'name' => 'navigation',
-      'weight' => '0',
-    ),
-  );
-  $page->arguments = array(
-    'user' => array(
-      'id' => 1,
-      'identifier' => 'User: ID',
-      'name' => 'entity_id:user',
-      'settings' => array(),
-    ),
-  );
-  $page->conf = array(
-    'admin_paths' => FALSE,
-  );
-  $page->default_handlers = array();
-  $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
-  $handler->api_version = 1;
-  $handler->name = 'page_cart_add_person_http_response';
-  $handler->task = 'page';
-  $handler->subtask = 'cart_add_person';
-  $handler->handler = 'http_response';
-  $handler->weight = 0;
-  $handler->conf = array(
-    'title' => 'HTTP response code',
-    'contexts' => array(),
-    'relationships' => array(),
-    'code' => '301',
-    'destination' => 'node/add/cart-person',
-    'access' => array(
-      'logic' => 'and',
-    ),
-  );
-  $page->default_handlers[$handler->name] = $handler;
-  $pages['cart_add_person'] = $page;
-
-  $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
-  $page->api_version = 1;
-  $page->name = 'cart_admin_taxonomy';
-  $page->task = 'page';
-  $page->admin_title = 'Cart admin taxonomy';
-  $page->admin_description = '';
-  $page->path = 'user/%user/admin-taxonomy';
-  $page->access = array(
-    'plugins' => array(
-      0 => array(
-        'name' => 'perm',
-        'settings' => array(
-          'perm' => 'administer taxonomy',
-        ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
-      ),
-    ),
-    'logic' => 'and',
-    'type' => 'none',
-    'settings' => NULL,
-  );
-  $page->menu = array(
-    'type' => 'action',
-    'title' => 'Administer tags',
-    'name' => 'navigation',
-    'weight' => '0',
-    'parent' => array(
-      'type' => 'none',
-      'title' => '',
-      'name' => 'navigation',
-      'weight' => '0',
-    ),
-  );
-  $page->arguments = array(
-    'user' => array(
-      'id' => 1,
-      'identifier' => 'User: ID',
-      'name' => 'entity_id:user',
-      'settings' => array(),
-    ),
-  );
-  $page->conf = array(
-    'admin_paths' => FALSE,
-  );
-  $page->default_handlers = array();
-  $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
-  $handler->api_version = 1;
-  $handler->name = 'page_cart_admin_taxonomy_http_response';
-  $handler->task = 'page';
-  $handler->subtask = 'cart_admin_taxonomy';
-  $handler->handler = 'http_response';
-  $handler->weight = 0;
-  $handler->conf = array(
-    'title' => 'HTTP response code',
-    'contexts' => array(),
-    'relationships' => array(),
-    'code' => '301',
-    'destination' => 'admin/structure/taxonomy/',
-    'access' => array(
-      'logic' => 'and',
-    ),
-  );
-  $page->default_handlers[$handler->name] = $handler;
-  $pages['cart_admin_taxonomy'] = $page;
-
-  $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
-  $page->api_version = 1;
   $page->name = 'cart_editing';
   $page->task = 'page';
   $page->admin_title = 'Cart editing';
@@ -622,7 +288,7 @@ We want to know what you think, because your opinion matters to us. Do you ha
     ),
   );
   $display = new panels_display();
-  $display->layout = 'unico';
+  $display->layout = 'double';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -638,7 +304,7 @@ We want to know what you think, because your opinion matters to us. Do you ha
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-c1f871f1-2a8b-4f5e-906f-542a317644ae';
-    $pane->panel = 'contentmain';
+    $pane->panel = 'one';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-editing';
     $pane->shown = TRUE;
@@ -657,7 +323,7 @@ We want to know what you think, because your opinion matters to us. Do you ha
     $pane->locks = array();
     $pane->uuid = 'c1f871f1-2a8b-4f5e-906f-542a317644ae';
     $display->content['new-c1f871f1-2a8b-4f5e-906f-542a317644ae'] = $pane;
-    $display->panels['contentmain'][0] = 'new-c1f871f1-2a8b-4f5e-906f-542a317644ae';
+    $display->panels['one'][0] = 'new-c1f871f1-2a8b-4f5e-906f-542a317644ae';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -672,7 +338,10 @@ We want to know what you think, because your opinion matters to us. Do you ha
   $page->admin_title = 'Home page';
   $page->admin_description = '';
   $page->path = 'home';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
