@@ -2863,6 +2863,10 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'nid' => 'nid',
@@ -3001,6 +3005,24 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['attach'] = array(
     0 => 'node:field_cart_representedby:cart_person',
   );
+
+  /* Display: Organizer Reference dialog Search */
+  $handler = $view->new_display('references_dialog', 'Organizer Reference dialog Search', 'references_dialog_9');
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['attach'] = array(
+    0 => 'node:field_cart_organizator:cart_exhibition',
+  );
+
+  /* Display: Sponsor Reference dialog Search */
+  $handler = $view->new_display('references_dialog', 'Sponsor Reference dialog Search', 'references_dialog_10');
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['attach'] = array(
+    0 => 'node:field_cart_sponsor:cart_exhibition',
+  );
   $translatables['cart_view_references'] = array(
     t('Master'),
     t('more'),
@@ -3025,6 +3047,8 @@ function cart_views_pages_views_default_views() {
     t('Publisher Reference dialog Search'),
     t('Writer Reference dialog Search'),
     t('Represente by Reference dialog Search'),
+    t('Organizer Reference dialog Search'),
+    t('Sponsor Reference dialog Search'),
   );
   $export['cart_view_references'] = $view;
 
