@@ -2846,6 +2846,189 @@ function cart_views_pages_views_default_views() {
   $export['cart_view_lists'] = $view;
 
   $view = new view();
+  $view->name = 'cart_view_references';
+  $view->description = 'References dialog search view';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Cart references';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'nid' => 'nid',
+    'title' => 'title',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'nid' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Search name';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    3 => 0,
+  );
+
+  /* Display: Venue Reference dialog Search */
+  $handler = $view->new_display('references_dialog', 'Venue Reference dialog Search', 'references_dialog_1');
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['attach'] = array(
+    0 => 'node:field_cart_venue:cart_exhibition',
+  );
+
+  /* Display: Artist dialog Search */
+  $handler = $view->new_display('references_dialog', 'Artist dialog Search', 'references_dialog_2');
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['attach'] = array(
+    0 => 'node:field_cart_artist:cart_exhibition',
+  );
+
+  /* Display: Curator Reference dialog Search */
+  $handler = $view->new_display('references_dialog', 'Curator Reference dialog Search', 'references_dialog_3');
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['attach'] = array(
+    0 => 'node:field_cart_curator:cart_exhibition',
+  );
+
+  /* Display: Catalog Reference dialog Search */
+  $handler = $view->new_display('references_dialog', 'Catalog Reference dialog Search', 'references_dialog_4');
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['attach'] = array(
+    0 => 'node:field_cart_catalog:cart_exhibition',
+  );
+
+  /* Display: Editor Reference dialog Search */
+  $handler = $view->new_display('references_dialog', 'Editor Reference dialog Search', 'references_dialog_5');
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['attach'] = array(
+    0 => 'node:field_cart_editor:cart_catalog',
+  );
+
+  /* Display: Publisher Reference dialog Search */
+  $handler = $view->new_display('references_dialog', 'Publisher Reference dialog Search', 'references_dialog_6');
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['attach'] = array(
+    0 => 'node:field_cart_publisher:cart_catalog',
+  );
+
+  /* Display: Writer Reference dialog Search */
+  $handler = $view->new_display('references_dialog', 'Writer Reference dialog Search', 'references_dialog_7');
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['attach'] = array(
+    0 => 'node:field_cart_textby:cart_catalog',
+  );
+
+  /* Display: Represente by Reference dialog Search */
+  $handler = $view->new_display('references_dialog', 'Represente by Reference dialog Search', 'references_dialog_8');
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['attach'] = array(
+    0 => 'node:field_cart_representedby:cart_person',
+  );
+  $translatables['cart_view_references'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Search name'),
+    t('Venue Reference dialog Search'),
+    t('Artist dialog Search'),
+    t('Curator Reference dialog Search'),
+    t('Catalog Reference dialog Search'),
+    t('Editor Reference dialog Search'),
+    t('Publisher Reference dialog Search'),
+    t('Writer Reference dialog Search'),
+    t('Represente by Reference dialog Search'),
+  );
+  $export['cart_view_references'] = $view;
+
+  $view = new view();
   $view->name = 'cart_view_taxonomy';
   $view->description = 'A view to emulate Drupal core\'s handling of taxonomy/term.';
   $view->tag = 'default';
