@@ -410,7 +410,7 @@ We want to know what you think, because your opinion matters to us. Do you ha
 	        <div class="front-focus">
                 <img src="<?php print base_path() . \'sites/default/files/structure/logoexp1.png\';?>" class="front-logo" /><img src="<?php print base_path() . \'sites/default/files/structure/logoexpr1.png\';?>" class="front-logo-r" />
                 <h1>
-	                CUBAN ART <br />WORLD<span class="invisible-separator"> </span>WIDE
+	                CUBAN ART<br />WORLD<span class="invisible-separator"> </span>WIDE
                 </h1>
                 <p>
                     Discover Cuban art exhibitions on Earth!
