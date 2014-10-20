@@ -413,7 +413,7 @@ We want to know what you think, because your opinion matters to us. Do you ha
 	                CUBAN ART<br />WORLD<span class="invisible-separator"> </span>WIDE
                 </h1>
                 <p>
-                    Discover Cuban art exhibitions on Earth!
+                    Discover Cuban Art Exhibitions on Earth!
                 </p>
             </div>
         </div>

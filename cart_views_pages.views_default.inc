@@ -1897,42 +1897,6 @@ function cart_views_pages_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
   $handler->display->display_options['pane_category']['name'] = 'Cart panes';
   $handler->display->display_options['pane_category']['weight'] = '0';
-
-  /* Display: Image gallery link */
-  $handler = $view->new_display('panel_pane', 'Image gallery link', 'panel_pane_2');
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['inline'] = array(
-    'nid' => 'nid',
-    'field_cart_links_web' => 'field_cart_links_web',
-    'field_cart_blog_link' => 'field_cart_blog_link',
-    'field_cart_rss_link' => 'field_cart_rss_link',
-    'field_cart_facebook_link' => 'field_cart_facebook_link',
-    'field_cart_twitter_link' => 'field_cart_twitter_link',
-    'field_cart_google_link' => 'field_cart_google_link',
-    'field_cart_linkedin_link' => 'field_cart_linkedin_link',
-    'field_cart_youtube_link' => 'field_cart_youtube_link',
-    'field_cart_instagram_link' => 'field_cart_instagram_link',
-    'field_cart_flickr_link' => 'field_cart_flickr_link',
-    'field_cart_imagegallery_link' => 'field_cart_imagegallery_link',
-  );
-  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Image gallery link */
-  $handler->display->display_options['fields']['field_cart_imagegallery_link']['id'] = 'field_cart_imagegallery_link';
-  $handler->display->display_options['fields']['field_cart_imagegallery_link']['table'] = 'field_data_field_cart_imagegallery_link';
-  $handler->display->display_options['fields']['field_cart_imagegallery_link']['field'] = 'field_cart_imagegallery_link';
-  $handler->display->display_options['fields']['field_cart_imagegallery_link']['label'] = '';
-  $handler->display->display_options['fields']['field_cart_imagegallery_link']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_cart_imagegallery_link']['alter']['text'] = '<strong>Main image gallery:</strong> <a href="[field_cart_imagegallery_link-url]" target="_blank" title="Main image gallery - [field_cart_imagegallery_link-title]"><i class="fa fa-photo fa-2x"></i></a>';
-  $handler->display->display_options['fields']['field_cart_imagegallery_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_cart_imagegallery_link']['click_sort_column'] = 'url';
-  $handler->display->display_options['pane_category']['name'] = 'Cart panes';
-  $handler->display->display_options['pane_category']['weight'] = '0';
   $translatables['cart_view_links'] = array(
     t('Master'),
     t('more'),
@@ -1955,8 +1919,6 @@ function cart_views_pages_views_default_views() {
     t('All'),
     t('Content pane'),
     t('Cart panes'),
-    t('Image gallery link'),
-    t('<strong>Main image gallery:</strong> <a href="[field_cart_imagegallery_link-url]" target="_blank" title="Main image gallery - [field_cart_imagegallery_link-title]"><i class="fa fa-photo fa-2x"></i></a>'),
   );
   $export['cart_view_links'] = $view;
 
