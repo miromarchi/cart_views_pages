@@ -22,7 +22,7 @@ function cart_views_pages_default_page_manager_pages() {
     'settings' => NULL,
   );
   $page->menu = array(
-    'type' => 'normal',
+    'type' => 'none',
     'title' => 'About',
     'name' => 'main-menu',
     'weight' => '7',
@@ -86,7 +86,8 @@ function cart_views_pages_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'About the project',
       'title' => 'About the project',
-      'body' => '<a href="<?php print file_create_url("public://1896-la-belle-dame-sans-merci.jpg"); ?>"><img class="img-responsive pull-right" typeof="foaf:Image" src="<?php print image_style_url("cart_img_square", "public://1896-la-belle-dame-sans-merci.jpg"); ?>" width="220" height="220" alt=""></a>
+      'body' => '<a id="about" class="anchor-top"></a>
+<a href="<?php print file_create_url("public://structure/about.jpg"); ?>"><img class="img-responsive pull-right" typeof="foaf:Image" src="<?php print image_style_url("cart_img_square", "public://structure/about.jpg"); ?>" width="220" height="220" alt=""></a>
 Cuban Art Worldwide is a project realized in collaboration with the Republic of Cuba Pavilion at the 56th International Art Exhibition, La Biennale di Venezia in order to promote Contemporary Cuban Art and offer an easy-to-use tool to find exhibitions displaying the work of Cuban artists around the world. 
 
 Cuban Art is flourishing inside and outside the island and <strong>tens of exhibitions featuring Cuban artists are on show every day</strong> around the world.
@@ -124,7 +125,8 @@ As the Republic of Cuba Pavilion at La Biennale di Venezia we are committed to p
     $pane->configuration = array(
       'admin_title' => 'Team',
       'title' => 'Team / Who we are',
-      'body' => '<a href="<?php print file_create_url("public://botticelli_la-primavera.jpg"); ?>"><img class="img-responsive pull-right" typeof="foaf:Image" src="<?php print image_style_url("cart_img_square", "public://botticelli_la-primavera.jpg"); ?>" width="220" height="220" alt=""></a>
+      'body' => '<a id="team" class="anchor-top"></a>
+<a href="<?php print file_create_url("public://structure/team.jpg"); ?>"><img class="img-responsive pull-right" typeof="foaf:Image" src="<?php print image_style_url("cart_img_square", "public://structure/team.jpg"); ?>" width="220" height="220" alt=""></a>
 Cuban Art Worldwide has been designed and developed by Marta Castellani, with the support  of the Cuban Republic Pavilion at the 56th International Art Exhibition, La Biennale di Venezia and Maretti Editore.
 The website was designed and developed in collaboration with Miro Marchi 
 Founding supporters include:',
@@ -155,7 +157,8 @@ Founding supporters include:',
     $pane->configuration = array(
       'admin_title' => 'Participate',
       'title' => 'Participate',
-      'body' => '<a href="<?php print file_create_url("public://venus.jpg"); ?>"><img class="img-responsive pull-right" typeof="foaf:Image" src="<?php print image_style_url("cart_img_square", "public://venus.jpg"); ?>" width="220" height="220" alt=""></a>
+      'body' => '<a id="participate" class="anchor-top"></a>
+<a href="<?php print file_create_url("public://structure/participate.jpg"); ?>"><img class="img-responsive pull-right" typeof="foaf:Image" src="<?php print image_style_url("cart_img_square", "public://structure/participate.jpg"); ?>" width="220" height="220" alt=""></a>
 Are you interested in getting involved with Cuban Art Worldwide Project?
 
 Here are 6 easy things you can do to help us: 
@@ -429,10 +432,10 @@ We want to know what you think, because your opinion matters to us. Do you ha
 	    </div>
 	    <div class="col-md-3 col-sm-6 column col2 text-center">
             <h2 class="when">When</h2>
-            <p>Everybody needs an agenda! Here you can visualize Cuban art exhibitions on a calendar, look what is on show or upcoming, take a look in the archive... Remember you can <a href="help">add this calendar to your calendar app!</a></p>
+            <p>Everybody needs an agenda! Here you can visualize Cuban art exhibitions on a calendar, look what is on show or upcoming... Remember you can <a href="help">add this calendar to your calendar app!</a></p>
 	        <div class="tb-rl coloredWhen">{</div>
             <p class="p-links text-center">
-                <a class="home-list btn btn-default btn-when" href="calendar">Calendar</a> <a class="home-list btn btn-default btn-when" href="calendar/archive">Archive</a> <a class="home-list btn btn-default btn-when" href="calendar/upcoming">Upcoming</a>
+                <a class="home-list btn btn-default btn-when" href="calendar">Calendar</a> <a class="home-list btn btn-default btn-when" href="calendar/upcoming">Upcoming</a>
             </p>
 	    </div>
 	    <div class="col-md-3 col-sm-6 column col3 text-center">

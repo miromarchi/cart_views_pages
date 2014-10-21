@@ -2523,14 +2523,14 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['filters']['title_2']['operator'] = 'contains';
   $handler->display->display_options['filters']['title_2']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title_2']['expose']['operator_id'] = 'title_2_op';
-  $handler->display->display_options['filters']['title_2']['expose']['label'] = 'Curator/s';
+  $handler->display->display_options['filters']['title_2']['expose']['label'] = 'Curator';
   $handler->display->display_options['filters']['title_2']['expose']['operator'] = 'title_2_op';
   $handler->display->display_options['filters']['title_2']['expose']['identifier'] = 'title_2';
   $handler->display->display_options['filters']['title_2']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    3 => 0,
     4 => 0,
+    3 => 0,
   );
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title_3']['id'] = 'title_3';
@@ -2540,14 +2540,14 @@ function cart_views_pages_views_default_views() {
   $handler->display->display_options['filters']['title_3']['operator'] = 'contains';
   $handler->display->display_options['filters']['title_3']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title_3']['expose']['operator_id'] = 'title_3_op';
-  $handler->display->display_options['filters']['title_3']['expose']['label'] = 'Venue';
+  $handler->display->display_options['filters']['title_3']['expose']['label'] = 'Venue name';
   $handler->display->display_options['filters']['title_3']['expose']['operator'] = 'title_3_op';
   $handler->display->display_options['filters']['title_3']['expose']['identifier'] = 'title_3';
   $handler->display->display_options['filters']['title_3']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    3 => 0,
     4 => 0,
+    3 => 0,
   );
   /* Filter criterion: Content: Location (field_cart_location) */
   $handler->display->display_options['filters']['field_cart_location_value']['id'] = 'field_cart_location_value';
@@ -2565,6 +2565,50 @@ function cart_views_pages_views_default_views() {
     1 => 0,
     3 => 0,
     4 => 0,
+  );
+  /* Filter criterion: Date: Date (node) */
+  $handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
+  $handler->display->display_options['filters']['date_filter']['table'] = 'node';
+  $handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
+  $handler->display->display_options['filters']['date_filter']['operator'] = '>=';
+  $handler->display->display_options['filters']['date_filter']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['date_filter']['expose']['operator_id'] = 'date_filter_op';
+  $handler->display->display_options['filters']['date_filter']['expose']['label'] = 'From date';
+  $handler->display->display_options['filters']['date_filter']['expose']['operator'] = 'date_filter_op';
+  $handler->display->display_options['filters']['date_filter']['expose']['identifier'] = 'date_filter';
+  $handler->display->display_options['filters']['date_filter']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['date_filter']['form_type'] = 'date_popup';
+  $handler->display->display_options['filters']['date_filter']['year_range'] = '-100:+5';
+  $handler->display->display_options['filters']['date_filter']['date_fields'] = array(
+    'field_data_field_cart_date.field_cart_date_value' => 'field_data_field_cart_date.field_cart_date_value',
+    'field_data_field_cart_date.field_cart_date_value2' => 'field_data_field_cart_date.field_cart_date_value2',
+  );
+  /* Filter criterion: Date: Date (node) */
+  $handler->display->display_options['filters']['date_filter_1']['id'] = 'date_filter_1';
+  $handler->display->display_options['filters']['date_filter_1']['table'] = 'node';
+  $handler->display->display_options['filters']['date_filter_1']['field'] = 'date_filter';
+  $handler->display->display_options['filters']['date_filter_1']['operator'] = '<=';
+  $handler->display->display_options['filters']['date_filter_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['date_filter_1']['expose']['operator_id'] = 'date_filter_1_op';
+  $handler->display->display_options['filters']['date_filter_1']['expose']['label'] = 'To date';
+  $handler->display->display_options['filters']['date_filter_1']['expose']['operator'] = 'date_filter_1_op';
+  $handler->display->display_options['filters']['date_filter_1']['expose']['identifier'] = 'date_filter_1';
+  $handler->display->display_options['filters']['date_filter_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['date_filter_1']['form_type'] = 'date_popup';
+  $handler->display->display_options['filters']['date_filter_1']['year_range'] = '-100:+5';
+  $handler->display->display_options['filters']['date_filter_1']['date_fields'] = array(
+    'field_data_field_cart_date.field_cart_date_value' => 'field_data_field_cart_date.field_cart_date_value',
+    'field_data_field_cart_date.field_cart_date_value2' => 'field_data_field_cart_date.field_cart_date_value2',
   );
   $handler->display->display_options['path'] = 'directory/exhibits';
   $handler->display->display_options['menu']['type'] = 'default tab';
@@ -2796,8 +2840,10 @@ function cart_views_pages_views_default_views() {
     t('referenced from field_cart_venue'),
     t('Search exhibit'),
     t('Artist'),
-    t('Curator/s'),
-    t('Venue'),
+    t('Curator'),
+    t('Venue name'),
+    t('From date'),
+    t('To date'),
     t('Sponsors'),
     t('referencing from field_cart_sponsor'),
     t('Search sponsor'),
